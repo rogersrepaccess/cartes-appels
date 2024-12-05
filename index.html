@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Téléchargement de Documents</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Service à la clientèle</title>
     <style>
       
       @font-face {
@@ -20,6 +21,25 @@
         background-color: #f5f5f5;
         margin: 0;
         padding: 0;
+      }
+      
+      .language-change {
+        position: relative;
+        left: 40%;
+        margin-top: 40px;
+        margin-bottom: -40px;
+        height: 20px;
+      }
+      
+      #language {
+        font-size: 18px;
+        color: #3D3C3C;
+        text-decoration: underline;
+        transition-duration: 200ms;
+      }
+      
+      #language:hover {
+        font-size: 20px;
       }
       
       .title {
@@ -48,6 +68,7 @@
         max-width: 900px;
         margin: 20px auto;
         margin-top: 30px;
+        margin-bottom: 50px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -147,6 +168,13 @@
     </style>
 </head>
 <body>
+    
+    <div class="language-change">
+      <a href="https://rogersrepaccess.github.io/call-cards/" id="language">
+        English
+      </a>
+    </div>
+  
     <div class="title">Service à la clientèle</div>
     <div class="subtitle">Coordonnées et cartes d'appel à imprimer</div>
     
