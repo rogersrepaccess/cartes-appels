@@ -3,58 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Téléchargement de Documents</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
+      
+      @font-face {
+        font-family: 'Ted Next';
+        src: url('https://raw.githubusercontent.com/rogersrepaccess/devis/main/fonts/TedNext-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }  
+      
+      body {
+        font-family: Ted Next;
+        text-align: center;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .title {
+        text-align: center;
+        color: #333;
+        margin-top: 40px;
+        font-size: 40px;
+        font-weight: bold;
+      }
+      
+      .subtitle {
+        text-align: center;
+        color: #333;
+        margin-top: 5px;
+        font-size: 28px;
+        font-weight: normal;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+      }
+      
+      .service-container {
+        max-width: 900px;
+        margin: 20px auto;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .service {
+        position: relative;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .service img {
+        max-width: 300px;
+        margin-bottom: -10px;
+        overflow: hidden;
+      }
+      
+      .service .icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        max-width: 40px;
+        height: auto;
+      }
+      
+      .service h2 {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      
+      .h2R {
+        color: #DA291C;
+      }
+      
+      .h2F {
+        color: #00706E;
+      }
+      
+      .h2C {
+        color: #4E2B79;
+      }
+      
+      .phone {
+        font-size: 24px;
+        color: #555;
+        margin: 5px 0;
+        font-weight: bold;
+      }
+        
+      .hours {
+        margin: 10px 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 18px;
+        text-align: center;
+        width: 80%;
+        height: 130px;
+        line-height: 0px;
+        align-items: center;
+        display: flex; /* Active Flexbox */
+        flex-direction: column; /* Assure que les lignes restent en colonne */
+        justify-content: center; /* Centre le contenu verticalement */
+      }
+      
+      .button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .button:hover {
+        background-color: #0056b3;
+      }
+      
+      @media (max-width: 768px) {
+        .service-container {
+          grid-template-columns: 1fr;
         }
-        h1 {
-            margin-top: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
+      }
+      
     </style>
 </head>
 <body>
-    <h1>Documents à Télécharger</h1>
-    <div class="container">
-        <a href="document1.pdf" class="button" download="Document1.pdf">Télécharger Document 1</a>
-        <a href="document2.pdf" class="button" download="Document2.pdf">Télécharger Document 2</a>
-        <a href="document3.pdf" class="button" download="Document3.pdf">Télécharger Document 3</a>
-        <a href="document4.pdf" class="button" download="Document4.pdf">Télécharger Document 4</a>
-        <a href="document5.pdf" class="button" download="Document5.pdf">Télécharger Document 5</a>
-        <a href="document6.pdf" class="button" download="Document6.pdf">Télécharger Document 6</a>
-        <a href="document7.pdf" class="button" download="Document7.pdf">Télécharger Document 7</a>
-        <a href="document8.pdf" class="button" download="Document8.pdf">Télécharger Document 8</a>
-        <a href="document9.pdf" class="button" download="Document9.pdf">Télécharger Document 9</a>
-        <a href="Chatr_FR-B.pdf" class="button" download="Chatr_FR-B.pdf">Chatr</a>
+    <div class="title">Service à la clientèle</div>
+    <div class="subtitle">Coordonnées et cartes d'appel à imprimer</div>
+    
+    <div class="service-container">
+        
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/nBWrPEw.png" alt="Logo du Service 1">
+        <h2 class="h2R">Rogers</h2>
+        <p class="phone">1 (888) 764-3771</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au dimanche : 7h00 - 21h00</p>
+        </div>
+        <a href="Rogers_FR-B.pdf" class="button" download="Rogers_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
+      <div class="service">
+        <img src="https://i.imgur.com/Nx3Ry8o.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/nBWrPEw.png" alt="Logo du Service 1">
+        <h2 class="h2R">Rogers - Validation</h2>
+        <p class="phone">1 (800) 588-6718</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 8h00 - 0h00</p>
+          <p>Samedi : 8h00 - 20h00</p>
+          <p>Dimanche : 10h00 - 20h00</p>
+        </div>
+        <a href="Rogers-V_FR-B.pdf" class="button" download="Rogers-V_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+      
+      <div class="service">
+        <img src="https://i.imgur.com/SCoVCdX.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/O2T0dhN.png" alt="Logo du Service 1">
+        <h2 class="h2R">Rogers - Protection supérieure d'appareil</h2>
+        <p class="phone">1 (855) 877-3887</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au dimanche : 8h00 - 0h00</p>
+        </div>
+        <a href="Rogers-DP_FR-B.pdf" class="button" download="Rogers-DP_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/HNSKetn.png" alt="Logo du Service 1">
+        <h2 class="h2R">Rogers - Prépayé</h2>
+        <p class="phone">1 (800) 575-9090</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au samedi : 8h00 - 21h00</p>
+          <p>Dimanche : 10h00 - 20h00</p>
+        </div>
+        <a href="Rogers-PP_FR-B.pdf" class="button" download="Rogers-PP_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+      
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/HmkkAmJ.png" alt="Logo du Service 1">
+        <h2 class="h2R">Banque Rogers</h2>
+        <p class="phone">1 (855) 775-2265</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 8h00 - 23h00</p>
+          <p>Samedi et dimanche : 10h00 - 19h00</p>
+        </div>
+        <a href="Rogers-Banque_FR-B.pdf" class="button" download="Rogers-Banque_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/eyjm2ff.png" alt="Logo du Service 1">
+        <h2 class="h2F">Fido</h2>
+        <p class="phone">1 (888) 481-3436</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 8h00 - 21h00</p>
+          <p>Samedi et dimanche : 9h00 - 17h00</p>
+        </div>
+        <a href="Fido_FR-B.pdf" class="button" download="Fido_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+      
+      <div class="service">
+        <img src="https://i.imgur.com/Nx3Ry8o.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/eyjm2ff.png" alt="Logo du Service 1">
+        <h2 class="h2F">Fido - Validation</h2>
+        <p class="phone">1 (800) 644-7174</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 8h00 - 0h00</p>
+          <p>Samedi : 8h00 - 20h00</p>
+          <p>Dimanche : 10h00 - 20h00</p>
+        </div>
+        <a href="Fido-V_FR-B.pdf" class="button" download="Fido-V_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
+      <div class="service">
+        <img src="https://i.imgur.com/SCoVCdX.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/TY4ktA7.png" alt="Logo du Service 1">
+        <h2 class="h2F">Fido - Protection supérieure d'appareil</h2>
+        <p class="phone">1 (866) 327-3399</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au dimanche : 8h00 - 0h00</p>
+        </div>
+        <a href="Fido-DP_FR-B.pdf" class="button" download="Fido-DP_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+      
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/MKVNuC8.png" alt="Logo du Service 1">
+        <h2 class="h2F">Fido - Prépayé</h2>
+        <p class="phone">1 (888) 482-3436</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 8h00 - 21h00</p>
+          <p>Samedi et dimanche: 9h00 - 17h00</p>
+        </div>
+        <a href="Fido-PP_FR-B.pdf" class="button" download="Fido-PP_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
+      <div class="service">
+        <img src="https://i.imgur.com/0Uh2MPn.png" class="icon" alt="Icône du Service 1">
+        <img src="https://i.imgur.com/e5IcB8M.png" alt="Logo du Service 1">
+        <h2 class="h2C">Chatr</h2>
+        <p class="phone">1 (800) 485-9745</p>
+        <div class="hours">
+          <p><strong>Heures d'ouverture :</strong></p>
+          <p>Lundi au Vendredi : 9h00 - 21h00</p>
+          <p>Samedi et dimanche : 9h00 - 18h00</p>
+        </div>
+        <a href="Chatr_FR-B.pdf" class="button" download="Chatr_FR-B.pdf">
+          <i class="fa-solid fa-download"></i> Cartes d'appel (PDF)
+        </a>
+      </div>
+
     </div>
 </body>
 </html>
